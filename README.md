@@ -2,10 +2,10 @@
 Woah_Proj ¬O¤@­Ó¥H Express + Socket.IO ¬°°òÂ¦ªº§Y®É²á¤Ñ¥Ü½d¡]«eºÝ©ñ¦b public/¡A¦øªA¾¹¬° server.js¡^¡C¦¹±M®×¤w³]­p¬°ºÝ¹ïºÝ¥[±K¡]E2EE¡^¬[ºc¡G°T®§¦b¥Î¤áºÝ¥[±K«á¤~°e¥X¡A¦øªA¾¹¶È§@¬°¤¤Ä~»P¥[±K¦r¦êªºÀx¦s»P¼s¼½¡C
 
 # ¹B§@­ì²z
-- ª÷Æ_»P¥[±K¼Ò¦¡  
+## ª÷Æ_»P¥[±K¼Ò¦¡  
   - ¥Î¤áºÝ¥²¶·¤â°Ê¿é¤J¬Û¦Pªº¹ïºÙª÷Æ_¡]©Î³q¦æ½X¡^¡C¥u¦³¨âºÝ¨Ï¥Î¬Û¦Pª÷Æ_®É¡A¤~¯à¤¬¬Û¸Ñ±K¨Ã¾\Åª°T®§¡C  
 
-- °T®§¬yµ{  
+## °T®§¬yµ{  
   1. ¨Ï¥ÎªÌ¦b«eºÝ¿é¤J°T®§¨Ã¥H¤â°Ê³]©wªºª÷Æ_¶i¦æ¥[±K¡A²£¥Í encryptedMsg¡]¦r¦ê¡^¡C  
   2. «eºÝ³z¹L Socket.IO µo°e¨Æ¥ó "chat message"¡A°Ñ¼Æ¬° encryptedMsg¡C  
   3. ¦øªA¾¹¡]server.js¡^¦¬¨ì encryptedMsg¡G  
@@ -13,14 +13,14 @@ Woah_Proj ¬O¤@­Ó¥H Express + Socket.IO ¬°°òÂ¦ªº§Y®É²á¤Ñ¥Ü½d¡]«eºÝ©ñ¦b public/¡A¦
      - ¨Ï¥Î io.emit("chat message", encryptedMsg) ¼s¼½µ¹©Ò¦³³s½uªº client¡]¦øªA¾¹¤£·|¹Á¸Õ¸Ñ±K¡^¡C  
   4. ¨ä¥L¥Î¤áºÝ¦¬¨ì¼s¼½«á¡A¨Ï¥Î¥»¦a¿é¤Jªºª÷Æ_¹Á¸Õ¸Ñ±K¨ÃÅã¥Ü©ú¤å¡]­Yª÷Æ_¤£¤Ç°t«hµLªk¸Ñ±K¡^¡C
 
-- ¾ú¥v°T®§¡]GET /messages¡^  
+## ¾ú¥v°T®§¡]GET /messages¡^  
   - ¦øªA¾¹´£¨Ñ GET /messages¡A·|Åª¨ú chat.txt¡B«ö¦æ¤À³Î¨Ã¦^¶Ç JSON { messages: [...] }¡A¦^¶Çªº¤´¬°¥[±K¦r¦ê¡A«È¤áºÝ­t³d¸Ñ±K¡C
 
-- ¦øªA¾¹¦æ¬°»PÁô¨p
+## ¦øªA¾¹¦æ¬°»PÁô¨p
   - ¦øªA¾¹·|°O¿ý³s½u­ì©l IP¡]±q socket handshake ¨ú±o¡^¡A¨Ã¥Ã¤[©Î¼È®É«O¦s¥[±K¦r¦ê¡]chat.txt¡^¡C  
   - ¦øªA¾¹ºÝ¤£«ù¦³©ÎºÞ²z¥Î¤áºÝª÷Æ_¡A¥B¤£·|¦b¥Ø«e¹ê§@¤¤¸Ñ±K°T®§¡F¦]¦¹¾÷±K©Êªº®Ö¤ß¨Ì¿à©ó¥Î¤áºÝªºª÷Æ_¦w¥þ»P¥æ´«¤è¦¡¡C
 
-- ­·ÀI»P«ØÄ³  
+## ­·ÀI»P«ØÄ³  
   - ª÷Æ_¤À¨É¡G¤â°Ê¿é¤Jª÷Æ_»Ý³z¹L¦w¥þªºÂ÷½u©Î¨ü«H³q¹D¡]OOB¡^¤À¨É¡AÁ×§K¦b¤½¶}´ë¹D¶Ç°eª÷Æ_¡C   
   - ¶Ç¿é¦w¥þ¡G³¡¸p®É½Ð°È¥²¨Ï¥Î HTTPS/TLS ¥H«OÅ@ WebSocket »P API ¸ô®|ªº¶Ç¿éÁô¨p¡C  
   - Àx¦s¦w¥þ¡Gchat.txt ¤¤«O¦sªº¤´¬°¥[±K¦r¦ê¡A¦ý­Yª÷Æ_¥~¬ª¡A¾ú¥v°T®§±N¥i³Q¸Ñ±K¡Fµø»Ý¨D¦Ò¼{¥[±jÀx¦sºÝ¥[±K©ÎÁYµu«O¯d´Á­­¡C
@@ -31,9 +31,6 @@ Woah_Proj ¬O¤@­Ó¥H Express + Socket.IO ¬°°òÂ¦ªº§Y®É²á¤Ñ¥Ü½d¡]«eºÝ©ñ¦b public/¡A¦
 - ws (^8.18.3)
 - body-parser (^2.2.0)
 - fs (^0.0.1-security)
-
-scripts:
-- start: node server.js
 
 # §Ö³t¶}©l¡]¥»¾÷¡^
 1. Clone ­Ü®w
