@@ -1,48 +1,51 @@
-# Â²¤¶
-Woah_Proj ¬O¤@­Ó¥H Express + Socket.IO ¬°°òÂ¦ªº§Y®É²á¤Ñ¥Ü½d¡]«eºÝ©ñ¦b public/¡A¦øªA¾¹¬° server.js¡^¡C¦¹±M®×¤w³]­p¬°ºÝ¹ïºÝ¥[±K¡]E2EE¡^¬[ºc¡G°T®§¦b¥Î¤áºÝ¥[±K«á¤~°e¥X¡A¦øªA¾¹¶È§@¬°¤¤Ä~»P¥[±K¦r¦êªºÀx¦s»P¼s¼½¡C
+# ç°¡ä»‹
+Woah_Proj æ˜¯ä¸€å€‹ä»¥ `Express` + `Socket.IO` ç‚ºåŸºç¤Žçš„è¼•é‡å³æ™‚èŠå¤©ç¯„ä¾‹ï¼Œå¯¦ä½œç«¯å°ç«¯åŠ å¯†ï¼ˆE2EEï¼‰ã€‚  
+- ä½¿ç”¨è€…éœ€åœ¨å‰ç«¯æ‰‹å‹•è¼¸å…¥ç›¸åŒçš„ã€Œå°ç¨±é‡‘é‘°ã€ï¼Œåªæœ‰é‡‘é‘°ç›¸åŒçš„ç”¨æˆ¶æ‰èƒ½æ­£ç¢ºè§£å¯†ä¸¦é–±è®€è¨Šæ¯ã€‚  
+- ä¼ºæœå™¨ï¼ˆ`server.js`ï¼‰åªä½œç‚ºä¸­ç¹¼èˆ‡åŠ å¯†å­—ä¸²å„²å­˜ï¼ˆ`chat.txt`ï¼‰ï¼Œä¸æœƒè§£å¯†è¨Šæ¯ã€‚
 
-# ¹B§@­ì²z
-## ª÷Æ_»P¥[±K¼Ò¦¡  
-  - ¥Î¤áºÝ¥²¶·¤â°Ê¿é¤J¬Û¦Pªº¹ïºÙª÷Æ_¡]©Î³q¦æ½X¡^¡C¥u¦³¨âºÝ¨Ï¥Î¬Û¦Pª÷Æ_®É¡A¤~¯à¤¬¬Û¸Ñ±K¨Ã¾\Åª°T®§¡C  
+# é‹ä½œåŽŸç†
+### 1) E2EEåŠ å¯†èˆ‡é‡‘é‘°ç®¡ç†
+- ç”¨æˆ¶ç«¯è² è²¬ï¼šé‡‘é‘°è¼¸å…¥ã€è¨Šæ¯åŠ å¯†ã€æ”¶åˆ°è¨Šæ¯å¾Œçš„è§£å¯†ã€‚  
+- ä¼ºæœå™¨ä¸æŒæœ‰é‡‘é‘°ï¼šä¼ºæœå™¨åªæŽ¥æ”¶èˆ‡å»£æ’­å·²åŠ å¯†çš„å­—ä¸²ã€‚
 
-## °T®§¬yµ{  
-  1. ¨Ï¥ÎªÌ¦b«eºÝ¿é¤J°T®§¨Ã¥H¤â°Ê³]©wªºª÷Æ_¶i¦æ¥[±K¡A²£¥Í encryptedMsg¡]¦r¦ê¡^¡C  
-  2. «eºÝ³z¹L Socket.IO µo°e¨Æ¥ó "chat message"¡A°Ñ¼Æ¬° encryptedMsg¡C  
-  3. ¦øªA¾¹¡]server.js¡^¦¬¨ì encryptedMsg¡G  
-     - ¥H´«¦æ¤è¦¡ªþ¥[¨ì chat.txt §@¬°¬ö¿ý¡]¨C¦æ¤@«h¥[±K¦r¦ê¡^¡C  
-     - ¨Ï¥Î io.emit("chat message", encryptedMsg) ¼s¼½µ¹©Ò¦³³s½uªº client¡]¦øªA¾¹¤£·|¹Á¸Õ¸Ñ±K¡^¡C  
-  4. ¨ä¥L¥Î¤áºÝ¦¬¨ì¼s¼½«á¡A¨Ï¥Î¥»¦a¿é¤Jªºª÷Æ_¹Á¸Õ¸Ñ±K¨ÃÅã¥Ü©ú¤å¡]­Yª÷Æ_¤£¤Ç°t«hµLªk¸Ñ±K¡^¡C
+### 2) è¨Šæ¯å‚³éžæµç¨‹ï¼ˆæ­¥é©ŸåŒ–ï¼‰
+1. ä½¿ç”¨è€…åœ¨å‰ç«¯è¼¸å…¥æ˜Žæ–‡ä¸¦ä½¿ç”¨æœ¬åœ°é‡‘é‘°åŠ å¯†ï¼Œç”¢ç”Ÿ `encryptedMsg`ï¼ˆå­—ä¸²ï¼‰ã€‚  
+2. å‰ç«¯é€éŽ Socket.IO ç™¼é€äº‹ä»¶ `socket.emit('chat message', encryptedMsg)`ã€‚  
+3. ä¼ºæœå™¨è¡Œç‚ºï¼ˆ`server.js`ï¼‰ï¼š  
+   - å°‡ `encryptedMsg` ä»¥æ›è¡Œé™„åŠ åˆ° `chat.txt`ï¼ˆä½œç‚ºæ­·å²ç´€éŒ„ï¼‰ã€‚  
+   - å‘¼å« `io.emit('chat message', encryptedMsg)` å»£æ’­çµ¦æ‰€æœ‰é€£ç·šçš„å®¢æˆ¶ç«¯ã€‚  
+4. å…¶ä»–ç”¨æˆ¶ç«¯æ”¶åˆ°å¾Œä½¿ç”¨æœ¬åœ°é‡‘é‘°å˜—è©¦è§£å¯†ä¸¦é¡¯ç¤ºæ˜Žæ–‡ï¼›è‹¥é‡‘é‘°ä¸åŒ¹é…å‰‡ç„¡æ³•è§£å¯†ã€‚
 
-## ¾ú¥v°T®§¡]GET /messages¡^  
-  - ¦øªA¾¹´£¨Ñ GET /messages¡A·|Åª¨ú chat.txt¡B«ö¦æ¤À³Î¨Ã¦^¶Ç JSON { messages: [...] }¡A¦^¶Çªº¤´¬°¥[±K¦r¦ê¡A«È¤áºÝ­t³d¸Ñ±K¡C
+### 3) æ­·å²è¨Šæ¯å­˜å–
+- APIï¼š`GET /messages`  
+  - ä¼ºæœå™¨è®€å– `chat.txt`ï¼ŒæŒ‰è¡Œåˆ†å‰²ä¸¦å›žå‚³ JSONï¼š  
+    `{ "messages": [ "encryptedLine1", "encryptedLine2", ... ] }`  
+  - å›žå‚³å…§å®¹ä»ç‚ºåŠ å¯†å­—ä¸²ï¼Œå®¢æˆ¶ç«¯è² è²¬è§£å¯†é¡¯ç¤ºã€‚
 
-## ¦øªA¾¹¦æ¬°»PÁô¨p
-  - ¦øªA¾¹·|°O¿ý³s½u­ì©l IP¡]±q socket handshake ¨ú±o¡^¡A¨Ã¥Ã¤[©Î¼È®É«O¦s¥[±K¦r¦ê¡]chat.txt¡^¡C  
-  - ¦øªA¾¹ºÝ¤£«ù¦³©ÎºÞ²z¥Î¤áºÝª÷Æ_¡A¥B¤£·|¦b¥Ø«e¹ê§@¤¤¸Ñ±K°T®§¡F¦]¦¹¾÷±K©Êªº®Ö¤ß¨Ì¿à©ó¥Î¤áºÝªºª÷Æ_¦w¥þ»P¥æ´«¤è¦¡¡C
+### 4) å®‰å…¨æç¤ºï¼ˆå¿«é€Ÿæ¸…å–®ï¼‰
+- é‡‘é‘°åˆ†äº«ï¼šè«‹é€éŽå®‰å…¨é€šé“ï¼ˆé›¢ç·šæˆ–å—ä¿¡ä»»çš„ OOBï¼‰äº¤æ›é‡‘é‘°ï¼Œåˆ‡å‹¿åœ¨å…¬é–‹èŠå¤©å®¤æˆ–è¨Šæ¯å…§è²¼å‡ºé‡‘é‘°ã€‚  
+- é‡‘é‘°å¼·åº¦ï¼šä½¿ç”¨é«˜ç†µé‡‘é‘°æˆ–ç”±å¯†ç¢¼è¡ç”Ÿï¼ˆPBKDF2/Argon2ï¼‰ç”¢ç”Ÿã€‚  
+- å‚³è¼¸å®‰å…¨ï¼šéƒ¨ç½²æ™‚å‹™å¿…å•Ÿç”¨ HTTPS/TLSï¼ˆä¿è­· WebSocket èˆ‡ APIï¼‰ã€‚  
+- å„²å­˜é¢¨éšªï¼š`chat.txt` å„²å­˜åŠ å¯†å­—ä¸²ï¼›è‹¥é‡‘é‘°å¤–æ´©ï¼Œæ­·å²è¨Šæ¯å¯è¢«è§£å¯†ã€‚
 
-## ­·ÀI»P«ØÄ³  
-  - ª÷Æ_¤À¨É¡G¤â°Ê¿é¤Jª÷Æ_»Ý³z¹L¦w¥þªºÂ÷½u©Î¨ü«H³q¹D¡]OOB¡^¤À¨É¡AÁ×§K¦b¤½¶}´ë¹D¶Ç°eª÷Æ_¡C   
-  - ¶Ç¿é¦w¥þ¡G³¡¸p®É½Ð°È¥²¨Ï¥Î HTTPS/TLS ¥H«OÅ@ WebSocket »P API ¸ô®|ªº¶Ç¿éÁô¨p¡C  
-  - Àx¦s¦w¥þ¡Gchat.txt ¤¤«O¦sªº¤´¬°¥[±K¦r¦ê¡A¦ý­Yª÷Æ_¥~¬ª¡A¾ú¥v°T®§±N¥i³Q¸Ñ±K¡Fµø»Ý¨D¦Ò¼{¥[±jÀx¦sºÝ¥[±K©ÎÁYµu«O¯d´Á­­¡C
-
-# ¬Û¨Ì®M¥ó¡]¨Ó¦Û package.json¡^
-- express (^5.1.0)
-- socket.io (^4.8.1)
-- ws (^8.18.3)
-- body-parser (^2.2.0)
-- fs (^0.0.1-security)
-
-# §Ö³t¶}©l¡]¥»¾÷¡^
-1. Clone ­Ü®w
+# å¿«é€Ÿé–‹å§‹ï¼ˆæœ¬æ©Ÿï¼‰
+- Clone å€‰åº«
+   ```bash
    git clone https://github.com/132DC5B/Woah_Proj.git
    cd Woah_Proj
+   ```
 
-2. ¦w¸Ë¬Û¨Ì®M¥ó
+- å®‰è£ç›¸ä¾å¥—ä»¶
+   ```bash
    npm install
+   ```
 
-3. ±Ò°Ê¦øªA¾¹
+- å•Ÿå‹•ä¼ºæœå™¨
+   ```bash
    npm start
+   ```
 
-4. ¶}±ÒÂsÄý¾¹
-   http://localhost:3000
-   ¡]server.js ¥Ø«e¹w³]ºÊÅ¥ 3000¡^
+- é–‹å•Ÿç€è¦½å™¨ (`server.js` ç›®å‰é è¨­ç›£è½ 3000)
+   ```
+  http://localhost:3000
+   ```
