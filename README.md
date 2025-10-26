@@ -24,3 +24,28 @@ Woah_Proj ¬O¤@­Ó¥H Express + Socket.IO ¬°°òÂ¦ªº§Y®É²á¤Ñ¥Ü½d¡]«eºÝ©ñ¦b public/¡A¦
   - ª÷Æ_¤À¨É¡G¤â°Ê¿é¤Jª÷Æ_»Ý³z¹L¦w¥þªºÂ÷½u©Î¨ü«H³q¹D¡]OOB¡^¤À¨É¡AÁ×§K¦b¤½¶}´ë¹D¶Ç°eª÷Æ_¡C   
   - ¶Ç¿é¦w¥þ¡G³¡¸p®É½Ð°È¥²¨Ï¥Î HTTPS/TLS ¥H«OÅ@ WebSocket »P API ¸ô®|ªº¶Ç¿éÁô¨p¡C  
   - Àx¦s¦w¥þ¡Gchat.txt ¤¤«O¦sªº¤´¬°¥[±K¦r¦ê¡A¦ý­Yª÷Æ_¥~¬ª¡A¾ú¥v°T®§±N¥i³Q¸Ñ±K¡Fµø»Ý¨D¦Ò¼{¥[±jÀx¦sºÝ¥[±K©ÎÁYµu«O¯d´Á­­¡C
+
+# ¬Û¨Ì®M¥ó¡]¨Ó¦Û package.json¡^
+- express (^5.1.0)
+- socket.io (^4.8.1)
+- ws (^8.18.3)
+- body-parser (^2.2.0)
+- fs (^0.0.1-security)
+
+scripts:
+- start: node server.js
+
+# §Ö³t¶}©l¡]¥»¾÷¡^
+1. Clone ­Ü®w
+   git clone https://github.com/132DC5B/Woah_Proj.git
+   cd Woah_Proj
+
+2. ¦w¸Ë¬Û¨Ì®M¥ó
+   npm install
+
+3. ±Ò°Ê¦øªA¾¹
+   npm start
+
+4. ¶}±ÒÂsÄý¾¹
+   http://localhost:3000
+   ¡]server.js ¥Ø«e¹w³]ºÊÅ¥ 3000¡^
