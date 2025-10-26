@@ -12,6 +12,7 @@ const themeSelect = document.getElementById("themeSelect");
 const fontSelect = document.getElementById("fontSelect");
 const langSelect = document.getElementById("langSelect");
 const clearKeyBtn = document.getElementById("clearKeyBtn");
+const toggleTopBarBtn = document.getElementById("toggleTopBarBtn");
 
 // 多語言字典（由 lang.js 提供）
 const i18n = window.LANG;
@@ -20,7 +21,8 @@ const i18n = window.LANG;
 let settings = JSON.parse(localStorage.getItem('chatSettings')) || {
   theme: 'dark',
   fontSize: 'medium',
-  lang: 'en_GB'
+  lang: 'en_GB',
+  showTopBar: true
 };
 
 // 應用設置
@@ -29,16 +31,19 @@ function applySettings() {
   document.body.className = settings.theme;
 
   // 字體大小
-  document.documentElement.style.fontSize = {
-    small: '12px',
-    medium: '16px',
-    large: '20px'
-  }[settings.fontSize];
+  // 字體大小：使用 body class 以便廣泛覆蓋 UI 元素
+  document.body.classList.remove('font-small', 'font-medium', 'font-large');
+  const fontClass = { small: 'font-small', medium: 'font-medium', large: 'font-large' }[settings.fontSize] || 'font-medium';
+  document.body.classList.add(fontClass);
 
   // 更新選擇框
   themeSelect.value = settings.theme;
   fontSelect.value = settings.fontSize;
   langSelect.value = settings.lang;
+
+  // top bar visibility
+  const topBar = document.querySelector('.top-bar');
+  if (settings.showTopBar) topBar.classList.remove('collapsed'); else topBar.classList.add('collapsed');
 
   // 全局語言
   document.documentElement.lang = settings.lang;
@@ -105,18 +110,32 @@ langSelect.addEventListener('change', (e) => {
   applySettings();
 });
 
+// top bar toggle
+if (toggleTopBarBtn) {
+  toggleTopBarBtn.addEventListener('click', () => {
+    settings.showTopBar = !settings.showTopBar;
+    localStorage.setItem('chatSettings', JSON.stringify(settings));
+    applySettings();
+  });
+}
+
 // 設置模態框控制
 settingsBtn.addEventListener('click', () => {
   settingsModal.classList.add('show');
 });
 
-closeSettingsBtn.addEventListener('click', () => {
-  settingsModal.classList.remove('show');
-});
+function closeSettingsModal() {
+  settingsModal.classList.add('hide');
+  setTimeout(() => {
+    settingsModal.classList.remove('show', 'hide');
+  }, 300); // 等待動畫完成
+}
+
+closeSettingsBtn.addEventListener('click', closeSettingsModal);
 
 settingsModal.addEventListener('click', (e) => {
   if (e.target === settingsModal) {
-    settingsModal.classList.remove('show');
+    closeSettingsModal();
   }
 });
 
