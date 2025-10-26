@@ -46,6 +46,6 @@ Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範
    ```
 
 - 開啟瀏覽器 (`server.js` 目前預設監聽 3000)
-   ```
+  ```
   http://localhost:3000
-   ```
+  ```
