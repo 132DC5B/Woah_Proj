@@ -17,21 +17,21 @@ Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範
 ###1) E2EE 加密與金鑰管理
 
 - 用戶端負責：金鑰輸入、訊息加密、收到訊息後的解密。 
--伺服器不持有金鑰：伺服器只接收與廣播已加密的字串。
+- 伺服器不持有金鑰：伺服器只接收與廣播已加密的字串。
 
 ###2) 訊息傳遞流程（步驟化）
 
 1. 使用者在前端輸入明文並使用本地金鑰加密，產生 `encryptedMsg`（字串）。 
 2. 前端透過 Socket.IO 發送事件 `socket.emit('chat message', encryptedMsg)`。 
-3.伺服器行為（`server.js`）：
+3. 伺服器行為（`server.js`）：
  - 將 `encryptedMsg`以換行附加到 `chat.txt`（作為歷史紀錄）。
  - 呼叫 `io.emit('chat message', encryptedMsg)` 廣播給所有連線的客戶端。
-4.其他用戶端收到後使用本地金鑰嘗試解密並顯示明文；若金鑰不匹配則無法解密。
+4. 其他用戶端收到後使用本地金鑰嘗試解密並顯示明文；若金鑰不匹配則無法解密。
 
 ###3) 歷史訊息存取
 
 - API：`GET /messages` 
- -伺服器讀取 `chat.txt`，按行分割並回傳 JSON： 
+ - 伺服器讀取 `chat.txt`，按行分割並回傳 JSON： 
  `{ "messages": [ "encryptedLine1", "encryptedLine2", ... ] }` 
  - 回傳內容仍為加密字串，客戶端負責解密顯示。
 
