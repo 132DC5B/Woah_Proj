@@ -128,7 +128,7 @@ function closeSettingsModal() {
   settingsModal.classList.add('hide');
   setTimeout(() => {
     settingsModal.classList.remove('show', 'hide');
-  }, 300); // 等待動畫完成
+  }, 300);
 }
 
 closeSettingsBtn.addEventListener('click', closeSettingsModal);
