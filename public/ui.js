@@ -15,7 +15,8 @@ export function cacheDom() {
         fontSelect: document.getElementById('fontSelect'),
         langSelect: document.getElementById('langSelect'),
         clearKeyBtn: document.getElementById('clearKeyBtn'),
-        toggleTopBarBtn: document.getElementById('toggleTopBarBtn')
+        toggleTopBarBtn: document.getElementById('toggleTopBarBtn'),
+        githubBtn: document.getElementById('githubBtn')
     };
 }
 
@@ -34,6 +35,15 @@ export function bindUIActions() {
     d.msgInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); d.sendBtn.click(); } });
     d.sendBtn.addEventListener('click', () => sendMessage());
     d.keyInput.addEventListener('input', () => state.renderMessages());
+
+    if (d.githubBtn) {
+        d.githubBtn.addEventListener('click', (e) => {
+            const url = d.githubBtn.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank', 'noopener');
+            }
+        });
+    }
 }
 
 export function closeSettingsModal() {
