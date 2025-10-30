@@ -67,7 +67,7 @@ Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範
 
 | 貢獻者 | 角色 / 貢獻 |
 | :--- | :--- |
-| **[@chanLik1208-dev](https:github.com/chanLik1208-dev)** | **概念與設計顧問** / 提供 **UI/UX 佈局思路** 與 **E2EE 概念架構** |
+| **[@chanLik1208-dev](https://github.com/chanLik1208-dev)** | **概念與設計顧問** / 提供 **UI/UX 佈局思路** 與 **E2EE 概念架構** |
 
 ---
 ---
