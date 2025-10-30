@@ -1,5 +1,5 @@
 import { state } from './state.js';
-import { cacheDom, bindUIActions, closeSettingsModal } from './ui.js';
+import { cacheDom, bindUIActions, closeSettingsModal, applySettings } from './ui.js';
 import { applyI18n } from './i18n.js';
 import { sendMessage, renderMessages } from './crypto.js';
 
@@ -9,11 +9,12 @@ cacheDom();
 state.renderMessages = renderMessages;
 
 bindUIActions();
+applySettings();
 applyI18n();
 
 state.socket.on('chat message', (encryptedMsg) => {
- state.messages.push(encryptedMsg);
- state.renderMessages();
+    state.messages.push(encryptedMsg);
+    state.renderMessages();
 });
 
 // expose sendMessage for ui module
