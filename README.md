@@ -1,10 +1,8 @@
 # Woah_Project
 
-[English](#english) | [繁體中文](#繁體中文)
+[English](#introduction) | [繁體中文](#簡介)
 
 ---
-
-## 繁體中文
 
 # 簡介
 Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範例，實作端對端加密（E2EE）。
@@ -64,10 +62,16 @@ Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範
  ```
  http://localhost:3000
  ```
- # 鳴謝 [@chanLik1208-dev](https://github.com/chanLik1208-dev)
----
 
-## English
+## 鳴謝
+
+| 貢獻者 | 角色 / 貢獻 |
+| :--- | :--- |
+| **[@chanLik1208-dev](https:github.com/chanLik1208-dev)** | **概念與設計顧問** / 提供 **UI/UX 佈局思路** 與 **E2EE 概念架構** |
+
+---
+---
+---
 
 # Introduction
 Woah_Proj is a lightweight real-time chat example built with `Express` + `Socket.IO` that demonstrates end-to-end encryption (E2EE).
@@ -128,5 +132,9 @@ Woah_Proj is a lightweight real-time chat example built with `Express` + `Socket
  http://localhost:3000
  ```
 
-# Thanks [@chanLik1208-dev](https://github.com/chanLik1208-dev)
+## Thanks / Acknowledgements
+
+| Contributor | Role / Contribution |
+| :--- | :--- |
+| **[@chanLik1208-dev](https://github.com/chanLik1208-dev)** | **Concept and Design Advisor** / Provided **UI/UX Layout Ideas** and the **E2EE Conceptual Architecture** |
 ---
