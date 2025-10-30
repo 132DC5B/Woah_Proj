@@ -1,0 +1,107 @@
+body.light {
+ background-color: #f7f8fa;
+ color: #222;
+}
+
+ body.light .top-bar,
+ body.light .bottom-bar {
+ background-color: #f0f2f5;
+ border-color: #d3d6db;
+ }
+
+ body.light #chat {
+ background-color: #f7f8fa;
+ }
+
+ body.light .message.self {
+ background-color: #e3f0ff;
+ color: #1a2a3a;
+ box-shadow: 2px 8px rgba(80, 120, 200, 0.10);
+ }
+
+ body.light .message.other {
+ background-color: #fff;
+ color: #2a2a2a;
+ box-shadow: 2px 8px rgba(120, 120, 120, 0.08);
+ }
+
+ body.light .modal-content {
+ background-color: #fff;
+ color: #1a2a3a;
+ box-shadow: 6px 24px rgba(80, 120, 200, 0.10);
+ }
+
+ body.light .settings-group label {
+ color: #2a2a2a;
+ }
+
+ body.light .settings-group select {
+ background-color: #f7f8fa;
+ color: #1a2a3a;
+ border: 1px solid #c0c6d1;
+ }
+
+ body.light #user,
+ body.light #key,
+ body.light #msg {
+ background-color: #fff;
+ color: #1a2a3a;
+ border: 1px solid #c0c6d1;
+ transition: all 0.3s;
+ }
+
+ body.light #user:focus,
+ body.light #key:focus,
+ body.light #msg:focus {
+ border-color: #4a90e2;
+ box-shadow: 0 5px #4a90e2;
+ }
+
+ body.light .modal-content h4 {
+ color: #1a2a3a;
+ }
+
+ body.light #clearKeyBtn {
+ background-color: #ffb3b3;
+ color: #a10000;
+ }
+
+ body.light #settingsBtn {
+ background-color: #e0e0e0;
+ color: #357ABD;
+ border: 1px solid #c0c6d1;
+ }
+
+ body.light #settingsBtn:hover {
+ background-color: #d0e6fa;
+ color: #1a2a3a;
+ }
+
+ body.light #clearKeyBtn:hover {
+ background-color: #ff7a7a;
+ }
+
+ body.light #loadBtn {
+ background-color: #4a90e2;
+ color: #fff;
+ }
+
+ body.light #loadBtn:hover {
+ background-color: #357ABD;
+ }
+
+ body.light #sendBtn {
+ background-color: #357ABD;
+ color: #fff;
+ }
+
+ body.light #sendBtn:hover {
+ background-color: #4a90e2;
+ }
+
+ body.light h2,
+ body.light h3 {
+ background: linear-gradient(45deg, #6db3f2, #b6fbff);
+ color: #1a2a3a;
+ text-shadow: 1px 0 #fff, 2px 8px #b6fbff44;
+ }
