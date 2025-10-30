@@ -64,7 +64,7 @@ Woah_Proj 是一個以 `Express` + `Socket.IO` 為基礎的輕量即時聊天範
  ```
  http://localhost:3000
  ```
- # 鳴謝 @chanLik1208-dev
+ # 鳴謝 [@chanLik1208-dev](https://github.com/chanLik1208-dev)
 ---
 
 ## English
@@ -128,4 +128,5 @@ Woah_Proj is a lightweight real-time chat example built with `Express` + `Socket
  http://localhost:3000
  ```
 
+# Thanks [@chanLik1208-dev](https://github.com/chanLik1208-dev)
 ---
