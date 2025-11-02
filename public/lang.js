@@ -1,4 +1,3 @@
-// 語言檔
 window.LANG = {
     en_GB: {
         settings: "Settings",
