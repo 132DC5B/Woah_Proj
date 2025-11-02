@@ -1,0 +1,70 @@
+@media screen and (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 15px;
+    }
+
+    #user,
+    #key {
+        width: 100%;
+        font-size: 16px;
+        height: 40px;
+        box-sizing: border-box;
+    }
+
+    #chat p {
+        max-width: 85%;
+    }
+
+    #msg {
+        font-size: 16px;
+        height: 40px;
+        box-sizing: border-box;
+    }
+
+    .bottom-bar {
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    #sendBtn {
+        padding: 8px 16px;
+        min-width: 80px;
+        height: 40px;
+    }
+
+    #clearKeyBtn,
+    #loadBtn {
+        padding: 8px 0;
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding: 10px 0;
+    }
+
+    h3 {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    #clearKeyBtn:hover,
+    #loadBtn:hover,
+    #sendBtn:hover,
+    ::-webkit-scrollbar-thumb:hover {
+        animation: none;
+    }
+
+    #clearKeyBtn:active {
+        background-color: #d32f2f;
+    }
+
+    #loadBtn:active,
+    #sendBtn:active {
+        background-color: #357ABD;
+    }
+}

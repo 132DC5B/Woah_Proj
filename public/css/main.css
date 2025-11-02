@@ -1,0 +1,95 @@
+html,
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+    body.font-small {
+        font-size: 18px;
+    }
+
+    body.font-medium {
+        font-size: 20px;
+    }
+
+    body.font-large {
+        font-size: 22px;
+    }
+
+    body.font-small h2, body.font-small h3 {
+        font-size: 1.0em;
+    }
+
+    body.font-medium h2, body.font-medium h3 {
+        font-size: 1.1em;
+    }
+
+    body.font-large h2, body.font-large h3 {
+        font-size: 1.2em;
+    }
+
+    body.font-small .message {
+        font-size: 13px;
+    }
+
+    body.font-medium .message {
+        font-size: 14px;
+    }
+
+    body.font-large .message {
+        font-size: 16px;
+    }
+
+    body.font-small .modal-content {
+        font-size: 13px;
+    }
+
+    body.font-medium .modal-content {
+        font-size: 14px;
+    }
+
+    body.font-large .modal-content {
+        font-size: 16px;
+    }
+
+    body.font-small input, body.font-small select, body.font-small button {
+        font-size: 13px;
+    }
+
+    body.font-medium input, body.font-medium select, body.font-medium button {
+        font-size: 14px;
+    }
+
+    body.font-large input, body.font-large select, body.font-large button {
+        font-size: 16px;
+    }
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #5a5a5a;
+    }
