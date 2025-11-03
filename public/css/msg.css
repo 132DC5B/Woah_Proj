@@ -53,3 +53,147 @@
 .message-content {
     word-break: break-word;
 }
+
+.message.undecryptable {
+    background-color: #5c3c3c; /* Darker red/brown for error */
+    color: #ffcccc; /* Lighter red for text */
+    border-left: 4px solid #e74c3c; /* Red border for emphasis */
+    font-style: italic;
+}
+
+.reply-preview {
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    padding: 8px 10px;
+    border-top: 1px solid #444;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    color: #ccc;
+}
+
+.reply-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    border-left: 3px solid #5cb85c; /* Green border for reply */
+    padding-left: 8px;
+}
+
+.reply-username {
+    font-weight: bold;
+    color: #5cb85c; /* Green for username */
+    font-size: 0.9em;
+}
+
+.reply-message-content {
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#cancelReplyBtn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+#cancelReplyBtn:hover {
+    color: #fff;
+}
+
+.message-reply-preview {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid #5cb85c;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: #a0a0a0;
+}
+
+.message-reply-preview .reply-username {
+    font-weight: bold;
+    color: #5cb85c;
+}
+
+.message-reply-preview .reply-content-text {
+    font-style: italic;
+}
+
+.recall-btn {
+    background-color: #e74c3c; /* Red for recall */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 0.75em;
+    transition: background-color 0.2s ease;
+}
+
+.recall-btn:hover {
+    background-color: #c0392b;
+}
+
+.recalled-message {
+    font-style: italic;
+    color: #888;
+    text-decoration: line-through;
+}
+
+/* Reply Preview Animations */
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToBottom {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.reply-preview {
+    /* ... existing styles ... */
+    animation: slideInFromBottom 0.3s ease-out forwards;
+}
+
+.reply-preview.hidden {
+    animation: slideOutToBottom 0.3s ease-in forwards;
+}
+
+/* Message Reply Preview Animation */
+@keyframes fadeInReply {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-reply-preview {
+    /* ... existing styles ... */
+    animation: fadeInReply 0.3s ease-out;
+}
