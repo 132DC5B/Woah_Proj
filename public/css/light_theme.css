@@ -105,3 +105,48 @@ body.light {
         color: #1a2a3a;
         text-shadow: 0 1px 0 #fff, 0 2px 8px #b6fbff44;
     }
+
+    body.light .reply-preview {
+        background-color: #e9eef2;
+        border-top: 1px solid #d3d6db;
+        color: #333;
+    }
+
+    body.light .reply-content {
+        border-left-color: #28a745;
+    }
+
+    body.light .reply-username {
+        color: #28a745;
+    }
+
+    body.light #cancelReplyBtn {
+        color: #666;
+    }
+
+        body.light #cancelReplyBtn:hover {
+            color: #111;
+        }
+
+    body.light .message-reply-preview {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-left-color: #28a745;
+        color: #555;
+    }
+
+        body.light .message-reply-preview .reply-username {
+            color: #28a745;
+        }
+
+    body.light .recall-btn {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        body.light .recall-btn:hover {
+            background-color: #c82333;
+        }
+
+    body.light .recalled-message {
+        color: #6c757d;
+    }
