@@ -14,13 +14,15 @@ const io = new Server(server);
 
 const DB_FILE = path.join(__dirname, "db.json");
 const adapter = new JSONFile(DB_FILE);
-const db = new Low(adapter);
+const defaultData = { messages: [] }; // 定義預設資料
+const db = new Low(adapter, defaultData); // 在建構子中提供預設資料
 
-// Initialize database
+// 初始化資料庫 (讀取現有資料，如果有的話)
 async function initializeDb() {
   await db.read();
-  db.data = db.data || { messages: [] };
-  await db.write();
+  // 如果 db.json 是空的或不存在，db.data 將會是 defaultData
+  // 不再需要 db.data = db.data || { messages: [] };
+  await db.write(); // 確保如果檔案不存在，會用預設資料創建檔案
 }
 initializeDb();
 

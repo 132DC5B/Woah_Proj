@@ -79,7 +79,8 @@ function renderMessages() {
             div.addEventListener('click', (event) => {
                 // Only set reply if not clicking on the recall button
                 if (!event.target.classList.contains('recall-btn')) {
-                    setReply(messageId, msgData.user, msgData.content);
+                    const contentToReply = messageObject.deleted ? "此訊息已撤回" : msgData.content;
+                    setReply(messageId, msgData.user, contentToReply, msgData.color);
                 }
             });
 

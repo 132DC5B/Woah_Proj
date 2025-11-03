@@ -1,26 +1,26 @@
-// ¦h»y¨¥¦r¨å¡]¥Ñ lang.js ´£¨Ñ¡^
+// å¤šèªè¨€å­—å…¸ï¼ˆç”± lang.js æä¾›ï¼‰
 const i18n = window.LANG;
 
-// ¥[¸ü«O¦sªº³]¸m
+// åŠ è¼‰ä¿å­˜çš„è¨­ç½®
 let settings = JSON.parse(localStorage.getItem('chatSettings')) || {
-  theme: 'dark',
+  theme: 'light', // Changed default theme to light
   fontSize: 'medium',
   lang: 'en_GB',
   showTopBar: true
 };
 
-// À³¥Î³]¸m
+// æ‡‰ç”¨è¨­ç½®
 function applySettings() {
-  // ¥DÃD³]¸m
+  // ä¸»é¡Œè¨­ç½®
   document.body.className = settings.theme;
 
-  // ¦rÅé¤j¤p
-  // ¦rÅé¤j¤p¡G¨Ï¥Î body class ¥H«K¼sªxÂĞ»\ UI ¤¸¯À
+  // å­—é«”å¤§å°
+  // å­—é«”å¤§å°ï¼šä½¿ç”¨ body class ä»¥ä¾¿å»£æ³›è¦†è“‹ UI å…ƒç´ 
   document.body.classList.remove('font-small', 'font-medium', 'font-large');
   const fontClass = { small: 'font-small', medium: 'font-medium', large: 'font-large' }[settings.fontSize] || 'font-medium';
   document.body.classList.add(fontClass);
 
-  // §ó·s¿ï¾Ü®Ø
+  // æ›´æ–°é¸æ“‡æ¡†
   themeSelect.value = settings.theme;
   fontSelect.value = settings.fontSize;
   langSelect.value = settings.lang;
@@ -29,51 +29,51 @@ function applySettings() {
   const topBar = document.querySelector('.top-bar');
   if (settings.showTopBar) topBar.classList.remove('collapsed'); else topBar.classList.add('collapsed');
 
-  // ¥ş§½»y¨¥
+  // å…¨å±€èªè¨€
   document.documentElement.lang = settings.lang;
 
-  // ¦h»y¨¥ UI
+  // å¤šèªè¨€ UI
   const lang = settings.lang;
-  // ¼ĞÃD¡B°Æ¼ĞÃD
+  // æ¨™é¡Œã€å‰¯æ¨™é¡Œ
   document.querySelector('h2').textContent = i18n[lang].title;
   document.querySelector('h3').textContent = i18n[lang].subtitle;
-  // ¿é¤J®Ø
+  // è¼¸å…¥æ¡†
   userInput.placeholder = i18n[lang].userPlaceholder;
   keyInput.placeholder = i18n[lang].keyPlaceholder;
   msgInput.placeholder = i18n[lang].msgPlaceholder;
-  // «ö¶s
+  // æŒ‰éˆ•
   sendBtn.textContent = i18n[lang].send;
   loadBtn.textContent = i18n[lang].load;
   clearKeyBtn.textContent = i18n[lang].clearKey;
 
-  // ³]©wµøµ¡
+  // è¨­å®šè¦–çª—
   document.querySelector('.modal-content h4').textContent = i18n[lang].settings;
   document.querySelector('label[for="themeSelect"]').textContent = i18n[lang].theme;
   document.querySelector('label[for="fontSelect"]').textContent = i18n[lang].fontSize;
   document.getElementById('labelLang').textContent = i18n[lang].lang;
   closeSettingsBtn.textContent = i18n[lang].close;
-  // ¤U©Ô¿ï³æ¤º®e¡]°ÊºA¨Ì¾Ú lang.js¡^
+  // ä¸‹æ‹‰é¸å–®å…§å®¹ï¼ˆå‹•æ…‹ä¾æ“š lang.jsï¼‰
   themeSelect.options[0].text = i18n[lang].dark;
   themeSelect.options[1].text = i18n[lang].light;
   fontSelect.options[0].text = i18n[lang].small;
   fontSelect.options[1].text = i18n[lang].medium;
   fontSelect.options[2].text = i18n[lang].large;
 
-  // ­«·s¥Í¦¨»y¨¥¤U©Ô¡]¨Ì window.LANG ªº keys¡^
-  // «O¯d¥Ø«e»y¨¥¿ï¨ú
+  // é‡æ–°ç”Ÿæˆèªè¨€ä¸‹æ‹‰ï¼ˆä¾ window.LANG çš„ keysï¼‰
+  // ä¿ç•™ç›®å‰èªè¨€é¸å–
   const currentLang = settings.lang;
   langSelect.innerHTML = '';
   Object.keys(window.LANG).forEach((code) => {
     const opt = document.createElement('option');
     opt.value = code;
-    // Åã¥Ü¦WºÙ±q·í«e»y¨¥ªº¦r¦ê¨ú¡A­Y¯Ê«h fallback to code
+    // é¡¯ç¤ºåç¨±å¾ç•¶å‰èªè¨€çš„å­—ä¸²å–ï¼Œè‹¥ç¼ºå‰‡ fallback to code
     opt.text = (i18n[currentLang] && i18n[currentLang][code]) || code;
     if (code === currentLang) opt.selected = true;
     langSelect.appendChild(opt);
   });
 }
 
-// ºÊÅ¥³]¸mÅÜ§ó
+// ç›£è½è¨­ç½®è®Šæ›´
 function updateSettingAndSave(key, value) {
   settings[key] = value;
   localStorage.setItem('chatSettings', JSON.stringify(settings));
@@ -94,5 +94,5 @@ langSelect.addEventListener('change', (e) => {
   applySettings();
 });
 
-// ªì©lÀ³¥Î³]¸m
+// åˆå§‹æ‡‰ç”¨è¨­ç½®
 applySettings();
