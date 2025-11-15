@@ -64,6 +64,8 @@ keyInput.addEventListener("input", () => {
 function renderMessages() {
     const key = keyInput.value.trim();
     const currentUser = userInput.value.trim();
+    const lang = settings.lang;
+    const i18n = window.LANG;
     chatDiv.innerHTML = "";
     messages.forEach(messageObject => {
         let decrypted = "";
@@ -71,15 +73,14 @@ function renderMessages() {
             const encryptedMsg = messageObject.content;
             decrypted = CryptoJS.AES.decrypt(encryptedMsg, key).toString(CryptoJS.enc.Utf8);
             const msgData = JSON.parse(decrypted);
-            const messageId = messageObject.id; // Use server-generated unique ID
+            const messageId = messageObject.id;
 
             const div = document.createElement("div");
             div.className = currentUser === msgData.user ? "message self" : "message other";
-            div.dataset.messageId = messageId; // Add data attribute for reply
+            div.dataset.messageId = messageId;
             div.addEventListener('click', (event) => {
-                // Only set reply if not clicking on the recall button
                 if (!event.target.classList.contains('recall-btn')) {
-                    const contentToReply = messageObject.deleted ? "此訊息已撤回" : msgData.content;
+                    const contentToReply = messageObject.deleted ? i18n[lang].recalled : msgData.content;
                     setReply(messageId, msgData.user, contentToReply, msgData.color);
                 }
             });
@@ -88,7 +89,7 @@ function renderMessages() {
             if (msgData.replyTo) {
                 const replyDiv = document.createElement("div");
                 replyDiv.className = "message-reply-preview";
-                replyDiv.innerHTML = `回覆 <span class="reply-username">${msgData.replyTo.user}</span>: <span class="reply-content-text">${msgData.replyTo.content}</span>`;
+                replyDiv.innerHTML = `${i18n[lang].replyTo} <span class="reply-username">${msgData.replyTo.user}</span>: <span class="reply-content-text">${msgData.replyTo.content}</span>`;
                 div.appendChild(replyDiv);
             }
 
@@ -115,7 +116,7 @@ function renderMessages() {
             if (currentUser === msgData.user && !messageObject.deleted) {
                 const recallBtn = document.createElement("button");
                 recallBtn.className = "recall-btn";
-                recallBtn.textContent = "撤回";
+                recallBtn.textContent = i18n[lang].recall;
                 recallBtn.addEventListener('click', () => {
                     socket.emit("recall message", messageId);
                 });
@@ -126,7 +127,7 @@ function renderMessages() {
 
             const content = document.createElement("div");
             content.className = "message-content";
-            content.textContent = messageObject.deleted ? "此訊息已撤回" : msgData.content;
+            content.textContent = messageObject.deleted ? i18n[lang].recalled : msgData.content;
             if (messageObject.deleted) {
                 content.classList.add("recalled-message");
             }
@@ -134,8 +135,6 @@ function renderMessages() {
 
             chatDiv.appendChild(div);
         } catch (e) {
-            // If decryption fails, do not display the message
-            // This restores the behavior of hiding undecryptable messages
         }
     });
     chatDiv.scrollTop = chatDiv.scrollHeight;
